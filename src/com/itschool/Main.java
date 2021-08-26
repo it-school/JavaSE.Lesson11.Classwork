@@ -27,7 +27,7 @@ public class Main {
         Collections.sort(staff.Staff(), new Comparator<Worker>() {
             @Override
             public int compare(Worker o1, Worker o2) {
-                return o2.getId()-o1.getId();
+                return o2.getId() - o1.getId();
             }
         });
 
@@ -44,13 +44,13 @@ public class Main {
         Collections.sort(staff.Staff(), Worker.ByNameASC());
         System.out.println(staff);
 
-
         Collections.sort(staff.Staff(), Worker.BySalaryASC);
         System.out.println(staff);
 
         System.out.println("\n\n");
         Collections.sort(staff.Staff(), Worker.BySalaryDESC);
-        for (int i = staff.Staff().size()-3; i < staff.Staff().size(); i++)
-         System.out.println(staff.Staff().get(i));
+        for (int i = staff.Staff().size() - 3; i < staff.Staff().size(); i++) {
+            System.out.println(staff.Staff().get(i));
+        }
     }
 }

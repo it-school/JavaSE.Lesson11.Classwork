@@ -1,7 +1,6 @@
 package com.itschool.Classes;
 
-public class FullTimeWorker extends Worker
-{
+public class FullTimeWorker extends Worker {
     public FullTimeWorker(int id, double pay, String name) {
         super(id, pay, name);
         setPay(pay);

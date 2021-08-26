@@ -1,6 +1,8 @@
 package com.itschool.Classes;
 
 public class PartTimeWorker extends Worker {
+    int hoursWorked;
+
     public PartTimeWorker(int id, double pay, String name) {
         super(id, pay, name);
         setPay(pay);
@@ -10,6 +12,11 @@ public class PartTimeWorker extends Worker {
         this(worker.id, worker.pay, worker.name, worker.hoursWorked);
     }
 
+    public PartTimeWorker(int id, double pay, String name, int hoursWorked) {
+        super(id, pay, name);
+        this.hoursWorked = hoursWorked;
+    }
+
     public int getHoursWorked() {
         return hoursWorked;
     }
@@ -17,8 +24,6 @@ public class PartTimeWorker extends Worker {
     public void setHoursWorked(int hoursWorked) {
         this.hoursWorked = hoursWorked >= 0 ? hoursWorked : 0;
     }
-
-    int hoursWorked;
 
     @Override
     public void setPay(double pay) {
@@ -34,10 +39,5 @@ public class PartTimeWorker extends Worker {
     public String toString() {
         return "PartTime " + "Worker{" + "id=" + id + ", pay=" + String.format("%10.2f", GetSalary()) +
                 ", name='" + name + '\'' + '}';
-    }
-
-    public PartTimeWorker(int id, double pay, String name, int hoursWorked) {
-        super(id, pay, name);
-        this.hoursWorked = hoursWorked;
     }
 }
