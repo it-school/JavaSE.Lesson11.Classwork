@@ -19,10 +19,10 @@ public class Main {
         Staff staff = new Staff();
         staff.Add(fullTimeWorker);
         staff.Add(partTimeWorker);
-        staff.Add(new PartTimeWorker(3, 60, "Bill Gates", 160));
+        staff.Add(new PartTimeWorker(3, 60, "Bill Gates", 200));
         staff.Add(new PartTimeWorker(5, 30, "Amanda Gates", 100));
 
-        System.out.println(staff);
+        System.out.println("\nStaff: " + staff);
 
         Collections.sort(staff.Staff(), new Comparator<Worker>() {
             @Override
@@ -31,7 +31,7 @@ public class Main {
             }
         });
 
-        System.out.println(staff);
+        System.out.println("\nStaff sorted by ID DESCending: \t" + staff);
 
         Collections.sort(staff.Staff(), new Comparator<Worker>() {
             @Override
@@ -39,15 +39,15 @@ public class Main {
                 return o2.getName().compareTo(o1.getName());
             }
         });
-        System.out.println(staff);
+        System.out.println("\nStaff sorted by name DESCending: \t" + staff);
 
         Collections.sort(staff.Staff(), Worker.ByNameASC());
-        System.out.println(staff);
+        System.out.println("\nStaff sorted by name ASCending: \t" + staff);
 
         Collections.sort(staff.Staff(), Worker.BySalaryASC);
-        System.out.println(staff);
+        System.out.println("\nStaff sorted by salary ASCending: \t" + staff);
 
-        System.out.println("\n\n");
+        System.out.println("\n\nLast 3 workers of staff sorted by salary DESCending: ");
         Collections.sort(staff.Staff(), Worker.BySalaryDESC);
         for (int i = staff.Staff().size() - 3; i < staff.Staff().size(); i++) {
             System.out.println(staff.Staff().get(i));

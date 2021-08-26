@@ -36,7 +36,7 @@ public class Staff {
 
     @Override
     public String toString() {
-        String result = "Staff: ";
+        String result = "";
 
         for (Worker w : staff) {
             result += "\n" + w;
